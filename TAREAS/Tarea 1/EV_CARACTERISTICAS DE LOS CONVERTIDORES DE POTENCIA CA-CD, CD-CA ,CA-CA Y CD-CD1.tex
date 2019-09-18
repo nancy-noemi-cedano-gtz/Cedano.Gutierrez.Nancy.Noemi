@@ -1,0 +1,69 @@
+\documentclass[10pt,letterpaper]{article}
+\title{EV 1.5 CARACTERISTICAS DE LOS CONVERTIDORES DE POTENCIA CA-CD, CD-CA, CA-CA Y CD-CD}
+\author{Cedano Gutierrez Nancy Noemi}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\graphicspath{{imagenes/}}
+\usepackage[left=2.5cm,top=2.5cm,bottom=3cm,right=2.5cm]{geometry}
+
+\begin{document}
+\section{Convertidores CC-CA}
+Los onduladores o inversores son convertidores estáticos de energía que convierten lacorriente continua CC en corriente alterna CA, con la posibilidad de alimentar una carga enalterna, regulando la tensión, la frecuencia o bien ambas. Más exactamente, los inversorestransfieren potencia desde una fuente de continua a una carga de alterna.
+
+\subsection{Monofasicos}
+\textbf{Semipuente}
+Típicamente se emplean señales de gobierno con ciclo de trabajo del 50 porciento y complementarias en los dos interruptores.
+La tensión de salida es una onda cuadrada de amplitud VE/2. Su onda de salida es cuadrada con un alto contenido armonico, ademas que su amplitud de salida no es controlable sino variable. La tension que soportan los interruptores es el doble que la amplitud de la señal de la salida.Las señales de gobierno de los interruptores no estan referidas al mismo punto.
+
+\textbf{PUENTE COMPLETO}
+El convertidor en puente completo está formado por 4 interruptores de potencia totalmente controlados. La tension de salida del voltaje puede ser tanto positivo como negativo o nulo dependiendo el estado de los interruptores. La tabla siguiente muestra la tensión de salida que se obtiene al cerrar las parejas de interruptores. Observe que S1 y S4 no deberían estar cerrados al mismo tiempo ni tampoco S2 y S3 para evitar un cortocircuito en la fuente de continua. Los interruptores reales no se abren y se cierran instantáneamente por tanto debe tenerse en cuenta los tiempos de conmutación a diseñar el control de los interruptores. Los tiempos de conducción de los interruptores resultaría circuito denominado en ocasiones fallo de solapamiento en tensión continúa. El tiempo permitido para la conmutación se denomina tiempo muerto (blanking Time). Para obtener una tension de salida Vc= 0, se puede ser al mismo tiempo los interruptores S1 S3 o bien S2 y S4. otra forma de obtener una tension cero a la salida sería eliminando las señales de control en los interruptores es decir manteniendo abiertos todos los interruptores.
+
+\textbf{PUSH PULL}
+El convertidor push pull funciona de manera que el tranformador de su circuito se magnetiza y desmagnetiza en un periodo de trabajo. Esta compuesto por una especie de inversor que convierte la tansión continua en alterna utilizando dos transistores y un rectificador de onda completa y un filtro paso bajo.
+\subsection{Trifasicos}
+Los inversores trifásicos se emplean en aplicaciones de baja, media y alta potencia con tensiones de salida de baja y media tensión.
+La característica trifásica los hace adecuados para aplicaciones de control de velocidad en motores de inducción de corriente alterna.
+ En aplicaciones de baja tensión, la salida de potencia puede ser tomada directamente del puente inversor. En aplicaciones de media tensión, es necesario emplear un transformador elevador cuya función es escalar la tensión a los niveles adecuados. 
+En esquemas trifásicos no existe el neutro de forma natural. En cargas dónde es necesario su conexión se emplea un transformador Delta estrella en la etapa de salida.
+\subsection{Onda de salida}
+\textbf{Cuadrada}
+La mayoria de los convertidores funcionan haciendo pasar la corriente continua a través de un transformador, primero en una dirección y luego en otra.  El dispositivo de conmutación que cambia la dirección de la corriente debe actuar con rapidez A medida que la corriente pasa a través de la cara primaria del transformador, la polaridad cambia 100 veces cada segundo  , en una frecuencia de 50 ciclos completos por segundo.  La dirección del flujo de corriente a través de la cara primaria del transformador cambia muy bruscamente, de manera que la forma de onda del secundario es "cuadrada".
+
+\ DeclareUnicodeCharacter {B0} {\ casi cuadrada} 
+La conmutación de onda casi cuadrada trata de eliminar el inconveniente que presenta la conmutación de onda cuadrada (no permite regular la magnitud de la tensión de salida) manteniendo su principal ventaja (cada interruptor activado la mitad del período).  Así, en una inversor monofásico con conmutación de onda casi cuadrada cada interruptor esta activado  durante 180°. Sin embargo, al contrario de lo que ocurria en onda cuadrada donde los interruptores conmutan en parejas, en conmutación de onda casi cuadrada cada rama del inversor  se controla de manera independiente, pudiendo estar, por tanto, los dos interruptores de un mismo nivel se encuentran activados o desactivados.  Al ángulo eléctrico en que los interruptores de un mismo nivel se encuentran activados o desactivados al mismo tiempo en el ángulo de solapamiento a.  Controlando dicho ángulo se controla la magnitud de la tensión de salida para cualquier armónico.  Por tanto, si el ángulo de solapamiento a=0° el inversor de onda casi-cuadrada funcionará como uno de conmutacion de onda cuadrada.
+\ DeclareUnicodeCharacter {B0} {\ textdegree}
+\textbf{Modulados}
+El proceso de modulación se basa en comparar la onda modulante (la sinusoide de referencia) con la onda portadora (la triangular) La salida del inversor se fija en su valor positivo cuando la amplitud de la sinusoide es superior a la amplitud de la triangular,  y en su valor negativo en el caso contrario (sinusoide inferior a triangular).
+Usualmente la amplitud de la onda modulante es variable acuerdo con la demanda, para controlar la amplitud del fundamental de voltaje de salida, mientras que la amplitud de la onda triangular permanece constante.
+Se define como índice de modulación de frecuencia, la relación entre la  frecuencia de la portadora y la frecuencia de la modulante. La frecuencia de la onda portadora define la frecuencia de conmutación del inversor. La frecuencia de la onda modulante define la frecuencia fundamental de la forma de  onda de salida del inversor.
+
+\textbf{Resonantes multinivel}
+se incluyen n estapas de conmutacion para producir una salida discretizada en n niveles  de tension. 
+permite que la tension de salida total sea n veces mayor que la tension manejada por cada dispositivo conmutador individual.
+logra una forma de onda escalonada a la salida que tenga un contenido armonico reducido sin necesidad de aumentar la frecuencia de conmutacion significativamente sobre la frecuencia de salida. reduce el dv/dt aplicando a los componentes del conversor y a la carga.
+
+\section{Convertidores CA-CA}
+\textbf{Variadores CA}
+El variador rectifica o transforma la corriente alterna (CA) de la alimentación en corriente directa (CD), para este cuenta con un circuito de rectificadores formados por diodos, un contactor interno, unas resistencias y unos capacitores  que permite obtener un CD lo mas plana posible (sin rizo).  Posteriormente, la CD se transforma nuevamente en CA de la frecuencia deseada diferente o igual a los 60 ciclos por segundo estándar en la línea de alimentación;  esta variación de la frecuencia es la que propiciará el motor gire más rápido a más lento según solicite al propio Variador.
+
+\textbf{Ciclo de controladores}
+1. Control de encendido y apagado 
+2. Control por ángulo de fase
+ En el control de "encendido y apagado (también llamado control todo o nada), interruptores estáticos (tiristores) conectan la carga a la fuente de  ca durante algunos ciclos del voltaje de entrada y lo desconectado durante algunos ciclos de otros. Los interruptores conectan el ángulo de fase, los interruptores conectan la carga con la fuente de ca durante una parte de cada ciclo del voltaje de entrada.  Podemos clasificar, desde el punto de vista de los circuitos utilizados en: a) Controladores monofásicos y b) Controladores trifásicos. Ambos a la vez pueden subdividirse en controladores unidireccionales o de medios de onda y en controladores bidireccionales o de onda completa.  configuraciones que dependen en gral, estos convertidores son relativamente sencillos, dados que son conmutados por línea, con control por ángulo de fase,  sin circuitos adicionales de conmutación.  Trabajan con baja frecuencia de conmutación, por lo que se utilizan tiristores (SCR) de baja frecuencia de conmutación, lo que hace que estos convertidores sean de bajo costo.  El análisis de las formas de onda de estos convertidores resulta más complejo, especialmente para el control por ángulo de fase con carga RL.  Con la propuesta de simplificar, analizaremos estos convertidores con carga resistiva;  no obstante en los diseños definitivos, deben tenerse en cuenta las cargas reales.
+
+\textbf{Convertidores matriciales}
+Conectan una carga trifasica directamente a la linea de alimentacion trifasica. El elemento clave de esta es el control de los interruptores bidereccionales que operan a alta frecuencia. estos son controlados de tal manera que pueda suministrar a la carga de voltaje de amplitud y frecuencia variables.Los voltajes de salida son generados a través de patrones de modulación PWM (Pulse Width Modulation, Modulación por Ancho de Pulso), similares a los utilizados en los inversores convencionales, excepto por que la entrada es una fuente de alimentación trifásica en lugar de un voltaje constante de DC. El CM no utiliza un bus de CD como etapa intermedia en la conversión CA-CA, por lo que no necesita de elementos reactivos para almacenar energía, que limitan en tamaño y duración la vida útil de un convertidor, como es común en otros convertidores de potencia.
+
+\section{Convertidores CA-CD}
+\textbf{No controlados y controlados}
+No controlados o rectificadores.  No se puede controlar la magnitud de la tensión continua, que será siempre fija.  Se construyen con diodos.
+Controlados Se puede regular la magnitud de la tensión CC mediante el control de la zona de conducción de los semiconductores de cada fase.  Tradicionalmente se construyen con tiristores de los que se controlan el instante de inicio de conducción (control por fase).  La extinción se produce de forma natural: cuando pasa la corriente por cero o cuando se dispara el tiristor de otra fase hacia el que se desvía la corriente continua.
+\begin{math}
+$
+
+\textbf{BIBLIOGRAFIAS}
+$ https://www2.ineel.mx/proyectofotovoltaico/preg_20.html
+http://fotovoltaico.galeon.com/tema2A.pdf
+http://ocw.uc3m.es/tecnologia-electronica/electronica-de-potencia/material-de-clase-1/MC-F-006.pdf
+\end{math}
+\end{document}
