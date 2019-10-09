@@ -1,0 +1,42 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{cancel}
+
+\begin{document}
+\begin{center}
+\textbf{TAREA 4}\\
+EXPLICA LOS ARREGLOS Y PARAMETROS DE LOS AMPLIFICADORES CLASE B
+\end{center}
+
+\begin{center}
+Cedano Gutierrez Nancy Noemi\\
+08-OCT-2019\\
+Universidad Politecnica de La Zona Metropolitana de Guadalajara
+\end{center}
+
+
+\section{Que es un amplificador clase b}
+Los amplificadores de clase B se caracterizan por tener intensidad casi nula a través de sus transistores cuando no hay señal en la entrada del circuito. Ésta las polarizan los transistores para que entren en zona de conducción, por lo que el consumo es menor que en la clase A, aunque la calidad es algo menor debido a la forma en que se transmite la onda. Se usa en sistemas telefónicos, transmisores de seguridad portátiles, y sistemas de aviso, aunque no en audio.
+
+Los amplificadores de clase B tienen etapas de salida con corriente de polarización infinita. Tienen una distorsión notable con señales pequeñas, denominada distorsión de cruce por cero, porque sucede en el punto que la señal de salida cruza por su nivel de cero volt a.c. y se debe justamente a la falta de polarización, ya que en ausencia de esta, mientras la señal no supere el nivel de umbral de conducción de los transistores estos no conducen
+
+En esta operacion, se usa un transistor para amplificar el ciclo positivo de la señal de entrada, mientras un segundo dispositivo se preocupa del ciclo negativo.
+La configuración se conoce como push-pull.
+Se requieren dos transistores para producir la onda completa. Cada transistor se polariza en al punto de corte en lugar del punto medio del intervalo de operación. Si el voltaje de entrada es positivo, de acuerdo a la conexion del transformador se tiene que Q1 conduce y Q2 esten en corte. Si el voltaje de entrada es negativo Q1 no conduce y Q2 conduce. Esto para permitir obtener la onda de salida completa. La corriente de colector es cero cuando la seÒal de entrada es cero, por lo tanto el transistor no disipa potencia en reposo.
+
+\section{Ventajas}
+Posee bajo consumo en reposo.
+Aprovecha al máximo la Corriente entregada por la fuente.
+Intensidad casi nula cuando está en reposo.
+
+\section{Desventajas}
+
+Producen armónicos, y es mayor cuando no tienen los transistores de salida con las mismas características técnicas, debido a esto se les suele polarizar de forma que se les introduce una pequeña polarización directa. Con esto se consigue desplazar las curvas y se disminuye dicha distorsión.\\
+
+\section{Conclusion}
+Para la operación de Clase B, se utilizan dos transistores de conmutación complementarios con el punto Q (que es su punto de polarización) de cada transistor ubicado en su punto de corte. Esto permite que un transistor amplifique la señal más de la mitad de la forma de onda de entrada, mientras que el otro transistor amplifica la otra mitad.
+
+\end{document}
