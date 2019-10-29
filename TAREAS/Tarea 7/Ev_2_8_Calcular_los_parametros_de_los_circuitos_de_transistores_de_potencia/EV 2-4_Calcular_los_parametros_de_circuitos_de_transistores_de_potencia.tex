@@ -1,0 +1,113 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{cancel}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+
+
+\begin{document}
+\begin{center}
+\textbf{Tarea 5\\Calcular los Parametros de los Circuito de Transistores de Potencia}\
+
+\end{center}
+
+\begin{center}
+Cedano Gutierrez Nancy Noemi\\
+29-Octubre-2019\\
+Universidad Politecnica de La Zona Metropolitana de Guadalajara
+\end{center}
+\section{TRANSISTOR DE POTENCIA}
+El funcionamiento de los transistores de potencia es identico a un transistor normal, teniendo como caracteristica especial las altas tensiones e intensidaes  que tienen que soportar y las potencias a disparar.\\
+\section{TIPOS DE TRANSISTORES DE POTENCIA}
+Bipolar\\
+Unipolar o FET\\
+IGBT\\
+
+\begin{tabular}{|p{50mm}|p{40mm}|p{40mm}|}
+\hline
+	PARAMETROS & MOS & BIPOLAR \\
+\hline
+	Impedancia de entrada & Alta (1010 ohmios) & Media (104 ohmios)\\
+\hline
+	Ganancia en corriente & Alta (107) & Media (10-100) \\
+\hline
+	Resistencia ON (saturacion)& Media/Alta & Baja \\
+\hline
+	Resistencia OFF ( corte) & Alta & Alta \\
+\hline
+	Voltaje aplicable & Alto (1000V) & Alto (1200V)\\
+\hline
+	Maxima temperatura de operacion & Alta (200  C) & Media (150 C)\\
+\hline
+	coste & Alto & Medio\\
+\hline
+	Frecuencia de trabajo & Alta(100-500 Khz) & Baja (10-80Khz)
+	
+\end{tabular}
+
+\section{Funcionamiento}
+Una limitacion de todos los dispositivos de potencia y en especial de los transistores bipolares, es que el paso de bloqueo a conduccion y viceversa no se hace instantaneamente, sino que siempre hay un retardo (ton,toff). Las causas fundamentales de estos retardos son las capacidades asociadas a las uniones colector- base y base- emisor y los tiempos de difusion y recombinacion de los portadores.\\
+
+\section{CALCULOS DE POTENCIAS DISIPADAS EN CONMUTACION CON CARGA RESISTIVA}
+Supongamos el momento origen en el comienzo del tiempo de subida (tr) de la corriente de colector. En estas condiciones (0 t tr) tendremos :
+\begin{center}
+Ic= Icmax * (t/tr)
+\end{center}
+donde IC más vale :
+\begin{center}
+Icmax= Vcc/R * (t/tr)
+\end{center}
+También tenemos que la tensión colector - emisor viene dada como:
+\begin{center}
+Vce= Vcc-R * ic
+\end{center}
+Sustituyendo, tendremos que :
+\begin{center}
+Vce(mayusculas)=Vcc -R * Vcc/R
+\end{center}
+Nosotros asumiremos que la VCE en saturación es despreciable en comparación con Vcc.
+Así, la potencia instantánea por el transistor durante este intervalo viene dada por :
+\begin{center}
+p= Vce *ic = Vcc*1cmax*(t/tr)*(1-t/tr)
+\end{center}
+La energía, Wr, disipada en el transistor durante el tiempo de subida está dada por la integral de la potencia durante el intervalo del tiempo de caída, con el resultado:
+\begin{center}
+Wr=(Vcc*1cmax/4)*(2*tr/3)
+\end{center}
+De forma similar, la energía (Wf) disipada en el transistor durante el tiempo de caída, viene dado como:
+\begin{center}
+Wf=(Vcc*1cmax/4)*(2xtf/3)
+\end{center}
+La potencia media resultante dependerá de la frecuencia con que se efectúe la conmutación:
+\begin{center}
+Pav=F*(Wr+Wf)
+\end{center}
+Un último paso es considerar tr despreciable frente a tf, con lo que no cometeríamos un error apreciable si finalmente dejamos la potencia media, tras sustituir, como:
+\begin{center}
+Pc(av)=Vcc*1cmax/6*tf*f
+\end{center}
+
+\section{CALCULO DE POTENCIAS DISIPADAS EN CONMUTACION CON CARGA INDUCTIVA}
+Arriba podemos ver la gráfica de la iC(t), VCE(t) y p(t) para carga inductiva. La energía perdida durante en ton viene dada por la ecuación:
+\begin{center}
+Wtan=1/2*V*1c(sat)*(t1+t2)
+\end{center}
+Durante el tiempo de conducción (t5) la energía perdida es despreciable, puesto que VCE es de un valor ínfimo durante este tramo.
+Durante el toff, la energía de pérdidas en el transistor vendrá dada por la ecuación:
+\begin{center}
+Wtoff= 1/2*V*1c(sat)*(t3+t4)
+\end{center}
+La potencia media de pérdidas durante la conmutación será por tanto:
+\begin{center}
+Ptot(av)=Wton+Wtoff/T=F*(Wton+Wtoff)
+\end{center}
+Si lo que queremos es la potencia media total disipada por el transistor en todo el periodo debemos multiplicar la frecuencia con la sumatoria de pérdidas a lo largo del periodo (conmutación + conducción). La energía de pérdidas en conducción viene como:
+\begin{center}
+Wcond=Vc(sot)*Ic(sat)*ts
+\end{center}
+
+
+\end{document}
